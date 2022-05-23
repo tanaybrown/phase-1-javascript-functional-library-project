@@ -16,14 +16,15 @@ function myEach(collection, callback) {
   return collection;
 }
 
-function myMap(col, cb) {
-  let newArr = isArray(col);
-  const anuda = [];
-  for (let i = 0; i < newArr.length; i++) {
-    let final = cb(newArr[i]);
-    anuda.push(final);
-  }
-  return anuda;
+function myMap(collection, cb) {
+  let newArr = []
+  const collectionArr = Object.values(collection)
+for (const value of collectionArr) {
+  
+const modifiedValue = cb(value)
+newArr.push(modifiedValue)
+}
+return newArr
 }
 
 function myReduce(col, cb, acc) {
